@@ -60,6 +60,16 @@ module.exports = function(grunt) {
         }]
       }
     },
+    sass: {
+      options: {
+        style: 'compressed'
+      },
+      main: {
+        files: {
+          'deploy/css/style.css': 'src/scss/style.scss'
+        }
+      }
+    },
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
@@ -71,11 +81,16 @@ module.exports = function(grunt) {
           'deploy/js/main.min.js': ['build/js/main.js']
         }
       }
+    },
+    watch: {
+      scripts: {
+        files: ['src/js/**/*.js', 'src/scss/**/*.scss', 'src/html/**/*.html'],
+        tasks: ['build']
+      }
     }
   });
 
   // Default task.
-  grunt.registerTask('default', 'jshint');
-
-  grunt.registerTask('build', ['jshint', 'copy', 'browserify', 'uglify', 's3']);
+  grunt.registerTask('build', ['jshint', 'copy', 'sass', 'browserify', 'uglify']);
+  grunt.registerTask('deploy', ['build', 's3']);
 };
