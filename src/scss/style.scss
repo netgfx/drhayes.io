@@ -1,1 +1,10 @@
-@import '../../lib/foundation/scss/foundation.scss';
+$header-font-family: "Economica", sans-serif;
+
+@import '../../lib/foundation/scss/foundation/variables';
+@import '../../lib/foundation/scss/foundation/components/global';
+@import '../../lib/foundation/scss/foundation/components/grid';
+@import '../../lib/foundation/scss/foundation/components/type';
+
+body {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
