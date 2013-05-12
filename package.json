@@ -1,0 +1,13 @@
+{
+  "name": "drhayes.io",
+  "version": "0.0.1",
+  "description": "Personal site.",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-cli": "~0.1.8",
+    "grunt-s3": "~0.2.0-alpha.1",
+    "grunt": "~0.4.1",
+    "grunt-contrib-sass": "~0.3.0",
+    "grunt-browserify": "~1.0.0"
+  }
+}
