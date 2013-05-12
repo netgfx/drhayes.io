@@ -56,7 +56,8 @@ module.exports = function(grunt) {
       main: {
         upload: [{
           src: 'deploy/**/*.*',
-          dest: '/'
+          dest: '/',
+          rel: 'deploy/'
         }]
       }
     },
