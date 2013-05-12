@@ -1,3 +1,4 @@
 node_modules
 build
 grunt-aws.json
+lib/foundation
