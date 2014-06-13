@@ -1,10 +1,15 @@
 $header-font-family: "Economica", sans-serif;
 
-@import '../../lib/foundation/scss/foundation/variables';
-@import '../../lib/foundation/scss/foundation/components/global';
-@import '../../lib/foundation/scss/foundation/components/grid';
-@import '../../lib/foundation/scss/foundation/components/type';
-
 body {
   font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 250%;
+
+  small {
+    opacity: 0.5;
+    font-size: 50%;
+  }
 }
