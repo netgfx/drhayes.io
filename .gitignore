@@ -1,6 +1,2 @@
 node_modules
-build
-deploy
 grunt-aws.json
-lib/foundation
-.sass-cache
