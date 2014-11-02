@@ -86,3 +86,9 @@ exclude_generator:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type:
+
+plugins:
+  - hexo-tag-emojis
+
+emojis:
+  image_dir: images/emojis
