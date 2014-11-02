@@ -90,5 +90,6 @@ deploy:
 plugins:
   - hexo-tag-emojis
 
+
 emojis:
   image_dir: images/emojis
