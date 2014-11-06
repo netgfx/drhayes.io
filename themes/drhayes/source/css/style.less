@@ -1,13 +1,33 @@
 @import "_reset.less";
 @import "_variables.less";
+@import "_page.less";
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-  font-size: 16px;
+  font-size: 14px;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td {
+  line-height: 1.4;
+}
+
+a {
+  color: steelblue;
+  text-decoration: none;
+
+  &:hover {
+    color: darken(steelblue, 10%);
+    background-color: #eee;
+  }
 }
 
 .container {
-  width: 90%;
+  width: 60rem;
   margin: 2em auto;
 }
 
