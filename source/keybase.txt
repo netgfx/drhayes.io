@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/drhayes
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://drhayes.io
+  * I am drhayes (https://keybase.io/drhayes) on keybase.
+  * I have a public key with fingerprint 17C5 BB89 6584 45B1 B431  D800 78E4 6D79 D295 413E
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "17c5bb89658445b1b431d80078e46d79d295413e",
+            "host": "keybase.io",
+            "key_id": "78e46d79d295413e",
+            "kid": "01019e5c100d7349bc1f385c384c8dae3d22a164712b984f5d96a5b8fb8752200efd0a",
+            "uid": "2849b7d84f73e1be42aeac5886105d00",
+            "username": "drhayes"
+        },
+        "revoke": {
+            "sig_ids": [
+                "77ea4d6fef45dfe96f1462231edcf4716901cf629b68beb2463f021413fa78c90f"
+            ]
+        },
+        "service": {
+            "hostname": "drhayes.io",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1420568608,
+    "expire_in": 157680000,
+    "prev": "b352837ed10e6291d0f26372cec4c19e5767f13f99844eb2541cba7c6bd97422",
+    "seqno": 7,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.1
+Comment: https://keybase.io/crypto
+
+yMJdAnicbZJbaFxFGMc3takx4JpiQW1LbOeh8WEtM3PmdlZ6BYsYC4EGhba6PTPz
+neQQu2dzzu6mSwgiXqql7YMWauyDECxoW3yIPqRBbU3XB1tQ40KDpUK9+9DgrS0i
+8TIn6oPQp8P55j+/7//9v2nefkuus22iN1mdH1mq2i58MF7L9Z+6b80o0rFtoOIo
+GoLFTxiVByCpJFG5ioqISMO1Vr7gijGuiWYesQpjqYAJK31Lfc6IB6iABuM0u+Ew
+OkhhfRS7mvspRdZVb6IfWjzABBMfuCEYW+kxXxsSeoobTzGjbACepTQggklCta9Y
+yK0vAq5VqJXklGIMocWBw9UWcVQ5hLROKD0gGhgNIDBcKUEwtxhnwhSScrAXnNom
+g0EDUjRWQAnU4yHIAkijAec5RcVdSEoImBUhhIzbEHwREiYo9QhYEzpLwsfEhIL6
+WigNmjLhhZgSN2AYSGV8HKLHHds1rEdmEZ6F9P/m/wRVSeJqbOInXX2wWq0UM0vV
+RiXTjYAu/Uso6ahs3X7chTokaRSXUZE4palGGZIwirlQAqsCgn2VKIFSlCm4FG5l
+GGdtoO6Q2uNUeRIsweDcE4tDKjxJDRhmsnVIIUM3hO8SZ24utzKjA2mEtr5klKJs
+puFyjIrS2QwGHNKlVg6qtQTQ2MzZ3UtzbZ25Ze1LsheW67yt679313vg1j+Rh9a9
+fOj1ycPrtrfyv7zUnDfPzx98qHTPvVs+f2t25OID809119K7m/Wr8xsXjvUXTvSP
+nW7tfnhh/1Tr6OyNL/uGe+BK+893dZT+OH8OXvj4SteKV9Z+1Nd67Mx0YWLTkWbt
+8MSlPUfePfvZHdPLpsdnvyBL3v9wsivOjz64pzj0xPnra+3bF9fs/7UxV+prLd/8
+yKpN6dENw7W9B3sP7JwqfHKJx2ee/WH8xDOre367/M2L0Xfr33uu/emtPdf25bef
+nvv+a//HY69dPjTzzsrrbY/uWLj/Qsdo89MbG09+dW5n+c1qx/FJvm1u5bc9W6a6
+f7+zueJqAzYn/ta/fuJGXnvVrHrj+Ey+s3vb34JMP+c=
+=XP01
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/drhayes
+
+==================================================================
+
