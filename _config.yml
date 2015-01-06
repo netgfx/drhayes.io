@@ -27,7 +27,7 @@ public_dir: public
 
 # Writing
 new_post_name: :title.md # File name of new posts
-default_layout: post
+default_layout: page
 titlecase: false # Transform title into titlecase
 external_link: false # Open external links in new tab
 filename_case: 0
@@ -86,10 +86,3 @@ exclude_generator:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type:
-
-plugins:
-  - hexo-tag-emojis
-
-
-emojis:
-  image_dir: images/emojis
