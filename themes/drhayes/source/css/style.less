@@ -3,6 +3,8 @@
 @import "_page.less";
 @import "_andromeda.less";
 
+@import "_fontawesome/font-awesome.less";
+
 * {
   box-sizing: border-box;
 }
@@ -58,8 +60,37 @@ strong {
   font-size: initial;
 }
 .main-page {
+  h2 {
+    margin-top: 2em;
+    font-weight: bold;
+  }
+
   ul {
-    margin-top: 1em;
-    margin-left: 2em;
+    margin-top: 0.2em;
+    margin-left: 1em;
+  }
+}
+
+a[href*=twitter] {
+  &:before {
+    content: @fa-var-twitter;
+    margin-right: 0.4em;
+    font-family: 'FontAwesome';
+  }
+}
+
+a[href*=github] {
+  &:before {
+    content: @fa-var-github;
+    margin-right: 0.4em;
+    font-family: 'FontAwesome';
+  }
+}
+
+a[href*=tumblr] {
+  &:before {
+    content: @fa-var-tumblr;
+    margin-right: 0.4em;
+    font-family: 'FontAwesome';
   }
 }
