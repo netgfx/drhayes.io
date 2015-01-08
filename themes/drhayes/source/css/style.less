@@ -97,3 +97,23 @@ a[href*=tumblr] {
     font-size: 80%;
   }
 }
+
+.breadcrumbs {
+  color: rgba(0, 0, 0, 0.5);
+
+  li {
+    display: inline-block;
+
+    a {
+      color: rgba(70, 130, 180, 0.5);
+    }
+
+    &:after {
+      content: '»';
+    }
+
+    &:last-child:after {
+      content: '';
+    }
+  }
+}
