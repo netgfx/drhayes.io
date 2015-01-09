@@ -1,6 +1,7 @@
 <div class="container">
   <header class="page-header">
-    <a href="/">drhayes.io</a>
+    <%- partial('_partial/breadcrumbs', { breadcrumbs: [page.title] }) %>
+    <%- partial('_partial/date', {display_date: page.date, date_format: 'MMMM DD, YYYY'}) %>
   </header>
   <article class="post">
     <header class="post-header">
