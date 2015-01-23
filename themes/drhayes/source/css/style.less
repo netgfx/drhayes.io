@@ -1,5 +1,7 @@
 @import "_reset.less";
 @import "_variables.less";
+@import "_grid.less";
+@import "_main.less";
 @import "_page.less";
 @import "_andromeda.less";
 
@@ -30,7 +32,7 @@ a {
 }
 
 .container {
-  width: 60rem;
+  width: @width;
   margin: 2em auto;
 }
 
@@ -54,23 +56,6 @@ strong {
 
 .font-initial {
   font-size: initial;
-}
-
-.index-header {
-  display: inline-block;
-  font-size: initial;
-}
-
-.main-page {
-  h2 {
-    margin-top: 2em;
-    font-weight: bold;
-  }
-
-  ul {
-    margin-top: 0.2em;
-    margin-left: 1em;
-  }
 }
 
 a[href*=twitter] {
