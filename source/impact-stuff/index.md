@@ -14,6 +14,7 @@ Code
 * [Statemachine][statemachine]. A state machine implementation.
 * [Combos][combos]. Provides the player the ability to do combos using a series
   of keyboard commands.
+* [Bezier][bezier]. Provides functions for generating bezier points and tangents.
 
 Helpers
 -------
@@ -37,3 +38,4 @@ Helpers
   [atom]: https://github.com/drhayes/atom-impactjs
   [dashgenerator]: https://github.com/drhayes/impactjs-dash-generator
   [tm]: https://github.com/drhayes/ImpactJS.tmbundle
+  [bezier]: https://github.com/drhayes/impactjs-bezier
