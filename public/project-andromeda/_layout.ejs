@@ -1,0 +1,13 @@
+<div class="container">
+  <header class="page-header">
+    <%- partial('../_partial/breadcrumbs', { breadcrumbs: ['<a href="/project-andromeda">Project Andromeda</a>', title] }) %>
+    <h1>
+      <span class="andromeda-header">Project Andromeda</span>:
+      <%- title %>
+    </h1>
+    <%- partial('../_partial/date', {display_date: page.date, date_format: 'MMMM DD, YYYY'}) %>
+  </header>
+  <article class="page">
+    <%- yield %>
+  </article>
+</div>
