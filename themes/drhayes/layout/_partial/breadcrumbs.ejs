@@ -2,9 +2,12 @@
   <li>
     <a href="/">drhayes.io</a>
   </li>
-  <% for(var i = 0; i < breadcrumbs.length; i++) { %>
-  <li>
-    <%- breadcrumbs[i] %>
-  </li>
+  <%
+    var pathSegments = page.path.split('/');
+    pathSegments = pathSegments.slice(0, -1);
+    for (var i = 0; i < pathSegments.length; i++) {
+      var segment = pathSegments[i];
+  %>
+  <li><%- site.data.breadcrumbs[segment] %> </li>
   <% } %>
 </ol>
