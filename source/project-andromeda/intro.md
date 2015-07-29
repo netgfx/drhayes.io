@@ -1,5 +1,4 @@
 title: Introduction
-layout: andromeda
 date: 2015-01-06
 ---
 

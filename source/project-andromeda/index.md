@@ -1,5 +1,4 @@
 title: Overview
-layout: andromeda
 date: 2015-01-06 10:43:19
 ---
 

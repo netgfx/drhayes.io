@@ -1,7 +1,7 @@
 <div class="container">
   <header class="page-header">
-    <%- partial('_partial/breadcrumbs', { breadcrumbs: [page.title] }) %>
-    <h1><%- page.title %></h1>
+    <%- partial('_partial/breadcrumbs') %>
+    <%- partial('_partial/title') %>
     <%- partial('_partial/date', {display_date: page.date, date_format: 'MMMM DD, YYYY'}) %>
   </header>
   <article class="page">
