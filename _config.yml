@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: drhayes.io
 subtitle:
 description:
-author: John Doe
+author: David R. Hayes
 language:
 timezone:
 
@@ -34,7 +34,7 @@ titlecase: false # Transform title into titlecase
 external_link: false # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
