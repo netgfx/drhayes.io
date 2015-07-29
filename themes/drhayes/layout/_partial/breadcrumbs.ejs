@@ -7,7 +7,11 @@
     pathSegments = pathSegments.slice(0, -1);
     for (var i = 0; i < pathSegments.length; i++) {
       var segment = pathSegments[i];
+      var breadcrumb = site.data.breadcrumbs[segment];
+      if (!breadcrumb) {
+        continue;
+      }
   %>
-  <li><%- site.data.breadcrumbs[segment] %> </li>
+  <li><%- breadcrumb %> </li>
   <% } %>
 </ol>
