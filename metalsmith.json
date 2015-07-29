@@ -9,6 +9,22 @@
     },
     "metalsmith-templates": {
       "engine": "handlebars"
-    }
+    },
+    "metalsmith-layouts": {
+      "engine": "handlebars",
+      "default": "layout.html",
+      "directory": "layouts"
+    },
+    "metalsmith-less": {
+      "pattern": "css/style.less",
+      "render": {
+        "path": "css/"
+      }
+    },
+    "metalsmith-ignore": [
+      "drafts/*",
+      "**/_*.*",
+      "**/_*"
+    ]
   }
 }

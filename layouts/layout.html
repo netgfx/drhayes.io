@@ -8,17 +8,16 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
+
     <div class="container">
       <header class="page-header">
-        <!-- get the real stuff from page.ejs later -->
-        <%- partial('_partial/breadcrumbs', { breadcrumbs: [ title ] }) %>
-        <h1><%- title %></h1>
-        <%- partial('_partial/date', { display_date: date }) %>
+        <h1>{{ title }}</h1>
       </header>
       <article class="page">
-        <%- yield %>
+        {{{ contents }}}
       </article>
     </div>
+
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
