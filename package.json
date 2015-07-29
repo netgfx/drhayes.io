@@ -2,7 +2,7 @@
   "name": "drhayes.io",
   "version": "0.0.0",
   "scripts": {
-    "start": "metalsmith"
+    "start": "node --harmony bin/build.js"
   },
   "private": true,
   "dependencies": {
