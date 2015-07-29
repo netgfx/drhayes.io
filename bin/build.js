@@ -4,16 +4,25 @@ var path = require('path');
 var Metalsmith = require('metalsmith');
 var ignore = require('metalsmith-ignore');
 var layouts = require('metalsmith-layouts');
+var less = require('metalsmith-less');
 var markdown = require('metalsmith-markdown');
 var permalinks = require('metalsmith-permalinks');
 var postcss = require('metalsmith-postcss');
 var templates = require('metalsmith-templates');
 
 new Metalsmith(path.resolve(__dirname, '..'))
+  .ignore('_*')
   .use(markdown())
   .use(templates('handlebars'))
+  .use(less({
+    pattern: 'css/style.less',
+    render: {
+      paths: ['./src/css/']
+    }
+  }))
   .build(function(err) {
     if (err) {
+      console.error(err);
       throw err;
     }
   });
