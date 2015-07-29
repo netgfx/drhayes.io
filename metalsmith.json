@@ -15,11 +15,11 @@
       "default": "layout.html",
       "directory": "layouts"
     },
-    "metalsmith-less": {
-      "pattern": "css/style.less",
-      "render": {
-        "path": "css/"
-      }
+    "metalsmith-postcss": {
+      "plugins": [
+        "postcss-nested",
+        "postcss-simple-vars"
+      ]
     },
     "metalsmith-ignore": [
       "drafts/*",
