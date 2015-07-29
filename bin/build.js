@@ -8,12 +8,14 @@ var less = require('metalsmith-less');
 var markdown = require('metalsmith-markdown');
 var permalinks = require('metalsmith-permalinks');
 var postcss = require('metalsmith-postcss');
-var templates = require('metalsmith-templates');
 
 new Metalsmith(path.resolve(__dirname, '..'))
   .ignore('_*')
   .use(markdown())
-  .use(templates('handlebars'))
+  .use(layouts({
+    engine: 'handlebars',
+    default: 'layout.html'
+  }))
   .use(less({
     pattern: 'css/style.less',
     render: {
