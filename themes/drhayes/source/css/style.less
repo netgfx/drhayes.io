@@ -20,12 +20,33 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, cod
 }
 
 a {
+  position: relative;
   color: steelblue;
   text-decoration: none;
+  -webkit-transition: text-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  transition: text-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+
+  &:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    margin: auto;
+    background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff), linear-gradient(steelblue, steelblue);
+    background-size: 0.10rem 0.01rem, 0.10rem 0.07rem, 0.07rem 0.07rem;
+    background-repeat: no-repeat, no-repeat, repeat-x;
+    background-position: 0% 100%, 100% 100%, 0% 100%;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+  }
 
   &:hover {
-    color: darken(steelblue, 10%);
-    background-color: #eee;
+    &:after {
+      width: 100%;
+    }
   }
 }
 
@@ -73,6 +94,7 @@ a[href*=twitter] {
     background-image: url(/images/Twitter_logo_blue_16.png);
     background-size: 1em 1em;
     background-repeat: no-repeat;
+    background-color: white;
   }
 }
 
@@ -87,6 +109,7 @@ a[href*=github] {
     background-image: url(/images/GitHub-Mark-32px.png);
     background-size: 1em 1em;
     background-repeat: no-repeat;
+    background-color: white;
   }
 }
 
@@ -101,6 +124,7 @@ a[href*=tumblr] {
     background-image: url(/images/tumblr_logo_white_blue_32.png);
     background-size: 1em 1em;
     background-repeat: no-repeat;
+    background-color: white;
   }
 }
 
