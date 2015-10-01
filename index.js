@@ -1,29 +1,13 @@
 var Metalsmith = require('metalsmith');
 var markdown = require('metalsmith-markdown');
-var templates = require('metalsmith-templates');
 var collections = require('metalsmith-collections');
 var permalinks = require('metalsmith-permalinks');
+var layouts = require('metalsmith-layouts');
 var Handlebars = require('handlebars');
 var fs = require('fs');
 
-// Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.hbt').toString());
-// Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.hbt').toString());
-
-// var findTemplate = function(config) {
-//     var pattern = new RegExp(config.pattern);
-//
-//     return function(files, metalsmith, done) {
-//         for (var file in files) {
-//             if (pattern.test(file)) {
-//                 var _f = files[file];
-//                 if (!_f.template) {
-//                     _f.template = config.templateName;
-//                 }
-//             }
-//         }
-//         done();
-//     };
-// };
+Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.html', 'utf8'));
+Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.html', 'utf8'));
 
 Metalsmith(__dirname)
   .use(collections({
@@ -36,15 +20,16 @@ Metalsmith(__dirname)
       reverse: true
     }
   }))
-  // .use(findTemplate({
-  //   pattern: 'posts',
-  //   templateName: 'post.hbt'
-  // }))
   .use(markdown())
-  .use(permalinks({
-    pattern: ':collection/:title'
+  // .use(permalinks({
+  //   pattern: ':collection/:title'
+  // }))
+  .use(layouts({
+    engine: 'handlebars',
+    directory: 'templates',
+    partials: 'templates/partials',
+    default: 'page.html'
   }))
-  .use(templates('handlebars'))
   .destination('./build')
   .build(function(err, files) {
     if (err) {
