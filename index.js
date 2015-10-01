@@ -4,6 +4,7 @@ var collections = require('metalsmith-collections');
 var permalinks = require('metalsmith-permalinks');
 var layouts = require('metalsmith-layouts');
 var Handlebars = require('handlebars');
+var less = require('metalsmith-less');
 var fs = require('fs');
 
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.html', 'utf8'));
@@ -21,6 +22,14 @@ Metalsmith(__dirname)
     }
   }))
   .use(markdown())
+  .use(less({
+    pattern: 'less/style.less',
+    render: {
+      paths: [
+        'src/less/'
+      ]
+    }
+  }))
   // .use(permalinks({
   //   pattern: ':collection/:title'
   // }))
@@ -28,7 +37,8 @@ Metalsmith(__dirname)
     engine: 'handlebars',
     directory: 'templates',
     partials: 'templates/partials',
-    default: 'page.html'
+    default: 'page.html',
+    pattern: '*.md|*.html'
   }))
   .destination('./build')
   .build(function(err, files) {
