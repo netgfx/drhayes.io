@@ -16,7 +16,7 @@ Two things of note: I have a one line deployment now courtesy of `npm` and I fac
 
 When I type `npm run deploy` my project rebuilds from scratch and pushes out to the world. That command is an alias for:
 
-```
+```bash
 rm -rf dist && mkdir -p dist/vendor
 cp index.html dist && cp vendor/phaser.min.js dist/vendor && browserify src/game.js -o dist/game.js && cp -R media dist/media && divshot push
 ```
