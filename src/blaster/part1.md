@@ -36,15 +36,14 @@ Among those methods are `addBehavior` and `behave`. `addBehavior` adds behaviors
 
 For instance, here I am adding the behavior framework to the `Player` sprite and then adding the `PlayerMove` behavior to it in its constructor:
 
-```
+```js
 enableBehaviors(this);
-
 this.addBehavior(new PlayerMove());
 ```
 
 And here's what the `Player`'s update method looks like:
 
-```
+```js
 update() {
   this.behave('update');
 }

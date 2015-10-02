@@ -4,6 +4,7 @@
 @import "_main.less";
 @import "_page.less";
 @import "_andromeda.less";
+@import "_prism.less";
 
 * {
   box-sizing: border-box;
@@ -11,7 +12,7 @@
 
 body {
   font-family: 'Open Sans', 'Helvetica', Tahoma, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   color: #333;
 }
 
@@ -56,11 +57,14 @@ a {
   }
 }
 
-code {
+code, code[class*="language-"], pre[class*="language-"] {
   font-family: 'Inconsolata', monospace;
+}
+
+:not(pre) > code {
   padding: 0.2em;
-  background-color: #ddd;
-  color: darken(spin(@linkColor, 90), 10%);
+  background-color: #f0f0f0;
+  color: #000000;
 }
 
 .container {
