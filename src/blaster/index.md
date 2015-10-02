@@ -11,6 +11,8 @@ I also wanted to take the opportunity to write out a tutorial of sorts around ho
 
 Here is the [repository for the project][repo].
 
+[Subscribe here for more Blaster news][subscribe]!
+
 As always, I guarantee this will be embarrassing.
 
 Steps:
@@ -21,5 +23,6 @@ Steps:
 
   [playblaster]: http://drhayes-blaster.divshot.io
   [repo]: https://github.com/drhayes/blaster
+  [subscribe]: http://eepurl.com/bBji6j
   [intro]: /blaster/intro.html
   [part1]: /blaster/part1.html
