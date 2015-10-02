@@ -22,6 +22,13 @@ Metalsmith(__dirname)
     }
   }))
   .use(markdown())
+  .use(layouts({
+    engine: 'handlebars',
+    directory: 'templates',
+    partials: 'templates/partials',
+    default: 'page.html',
+    pattern: '**/*.html'
+  }))
   .use(less({
     pattern: 'less/style.less',
     render: {
@@ -33,13 +40,13 @@ Metalsmith(__dirname)
   // .use(permalinks({
   //   pattern: ':collection/:title'
   // }))
-  .use(layouts({
-    engine: 'handlebars',
-    directory: 'templates',
-    partials: 'templates/partials',
-    default: 'page.html',
-    pattern: '*.md|*.html'
-  }))
+  // .use(function(files, metalsmith, done) {
+  //   for (var filename in files) {
+  //     if (filename.match())
+  //     console.log(filename);
+  //   }
+  //   done();
+  // })
   .destination('./build')
   .build(function(err, files) {
     if (err) {

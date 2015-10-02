@@ -2,7 +2,7 @@
   "name": "drhayes.io",
   "version": "0.0.1",
   "scripts": {
-    "start": "hexo server"
+    "start": "node --harmony index.js"
   },
   "private": true,
   "hexo": {
