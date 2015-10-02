@@ -1,4 +1,5 @@
 var Metalsmith = require('metalsmith');
+var watch = require('metalsmith-watch');
 var markdown = require('metalsmith-markdown');
 var collections = require('metalsmith-collections');
 var permalinks = require('metalsmith-permalinks');
@@ -11,6 +12,7 @@ Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/par
 Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.html', 'utf8'));
 
 Metalsmith(__dirname)
+  .use(watch())
   .use(collections({
     pages: {
       pattern: 'content/pages/*.md'
