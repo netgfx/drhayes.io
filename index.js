@@ -6,13 +6,23 @@ var permalinks = require('metalsmith-permalinks');
 var layouts = require('metalsmith-layouts');
 var Handlebars = require('handlebars');
 var less = require('metalsmith-less');
+var moment = require('moment');
+var morph = require('morph');
 var fs = require('fs');
 
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.html', 'utf8'));
 Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.html', 'utf8'));
+Handlebars.registerHelper('dateFormat', function (dateStr) {
+  return moment(dateStr).format('MMMM D, YYYY');
+})
 
 Metalsmith(__dirname)
-  .use(watch())
+  .use(watch({
+    paths: {
+      "${source}/**/*": true,
+      "templates/**/*": "**/*.md"
+    }
+  }))
   .use(collections({
     pages: {
       pattern: 'content/pages/*.md'
@@ -23,6 +33,21 @@ Metalsmith(__dirname)
       reverse: true
     }
   }))
+  // HACK: TOTALLY NOT GONNA WORK WITH ANY DEPTH!
+  .use(function (files, metalsmith, done) {
+    for (var filename in files) {
+      var file = files[filename];
+      if (!file.breadcrumbs) {
+        file.breadcrumbs = filename.split('/').slice(0, -1).map(function (segment) {
+          return {
+            link: segment,
+            title: morph.toTitle(segment.replace('.html', ''))
+          };
+        });
+      }
+    }
+    done();
+  })
   .use(markdown())
   .use(layouts({
     engine: 'handlebars',

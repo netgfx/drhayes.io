@@ -2,9 +2,19 @@
 
 <div class="container">
   <header class="page-header">
+    <ol class="breadcrumbs">
+      <li>
+        <a href="/">drhayes.io</a>
+      </li>
+      {{#breadcrumbs}}
+      <li>
+        <a href="/{{link}}">{{title}}</a>
+      </li>
+      {{/breadcrumbs}}
+    </ol>
     <!-- <%- partial('_partial/breadcrumbs') %> -->
-    <!-- <%- partial('_partial/title') %> -->
-    <!-- <%- partial('_partial/date', {display_date: page.date, date_format: 'MMMM DD, YYYY'}) %> -->
+    <h1>{{ title }}</h1>
+    <time datetime="{{ date }}" itemprop="datePublished">{{ dateFormat date }}</time>
   </header>
   <article class="page">
     {{{ contents }}}
