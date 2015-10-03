@@ -13,6 +13,7 @@ There is a player sprite, a blue square. The blue square can be moved around the
 
 This is around 18 commits into the life of the repository and I've skipped a boatload of setup stuff. I was using [webpack][], now I've switched to [browserify][]. As you can see from the [package.json][pjson] at this commit here is the stack:
 
+  * [Phaser][phaser] the JS game engine I'm using to build it.
   * [browserify][] to bundle up the JavaScript into a single file.
   * [babelify][] to provide ES2015 goodness.
   * [brfs][] to inline text files in my JS bundle (great for shader source!).
@@ -67,6 +68,7 @@ Shooting! Explosions! And the start of a series of mistakes that won't come back
 
   [sha1]: https://github.com/drhayes/blaster/tree/43f96688225dc80839acc2e507cc5b8d841d1149
   [webpack]: https://webpack.github.io/
+  [phaser]: http://phaser.io
   [browserify]: https://github.com/substack/node-browserify
   [pjson]: https://github.com/drhayes/blaster/blob/58be685ae7b03d5fe2dd19a575f4d95d44091f90/package.json
   [babelify]: https://github.com/babel/babelify
