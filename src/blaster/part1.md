@@ -3,13 +3,22 @@ title: Part One, The Player
 date: 2015-09-27 8:20:00
 ---
 
-First things first: I need a player. [I'm on commit 43f966 here][sha1].
+This is the first part of an extended write-up I'm doing about my [Phaser](http://phaser.io) game, Blaster. [Play Blaster here][playblaster].
+
+First things first: I need a player. [I'm on commit 43f966 here][sha1].  It is also tagged as [part1][].
 
 ## What Works Right Now
 
 There is a player sprite, a blue square. The blue square can be moved around the game canvas using WASD or by using a gamepad (don't forget to hit a button to enable the gamepad first!).
 
 ## What I Skipped
+
+Here are the tools I'm using to make this thing come to life:
+
+  * [Atom][atom] is my text editor.
+  * [Pyxel Edit][pyxel] is my image editor.
+  * [cfxr][] as the sound generator.
+  * [oceanaudio][] as the sound editor.
 
 This is around 18 commits into the life of the repository and I've skipped a boatload of setup stuff. I was using [webpack][], now I've switched to [browserify][]. As you can see from the [package.json][pjson] at this commit here is the stack:
 
@@ -62,11 +71,19 @@ In `update` you can see code that reads the keyboard and gamepad to see if the p
 
 Kind of verbose, I admit. But imagine later in the game if I were to add an enemy weapon the could disable the player movement. I could do that by setting the `enabled` property of this behavior to false. That switches off the whole behavior all at once. Also, by logically organizing pieces of sprites' behaviors I don't have to go hunting deep into complicated `update` methods to find out how to make something move slower or to turn off player input while a menu is showing.
 
-## What's Next
+## Let's Review
+
+### Now
+
+The groundwork for the game has been laid out. The boilerplate of the project (assets, states, bundling) is in place. There's a player. It can have behaviors.
+
+### Next
 
 Shooting! Explosions! And the start of a series of mistakes that won't come back to haunt me until close to the alpha release!
 
+  [playblaster]: http://blaster.drhayes.io
   [sha1]: https://github.com/drhayes/blaster/tree/43f96688225dc80839acc2e507cc5b8d841d1149
+  [part1]: https://github.com/drhayes/blaster/tree/part1
   [webpack]: https://webpack.github.io/
   [phaser]: http://phaser.io
   [browserify]: https://github.com/substack/node-browserify
@@ -74,6 +91,10 @@ Shooting! Explosions! And the start of a series of mistakes that won't come back
   [babelify]: https://github.com/babel/babelify
   [brfs]: https://github.com/substack/brfs
   [wzrd]: https://github.com/maxogden/wzrd
+  [cfxr]: http://thirdcog.eu/apps/cfxr
+  [oceanaudio]: http://www.ocenaudio.com.br/en/whatis
+  [atom]: https://atom.io
+  [pyxel]: http://pyxeledit.com/
   [sourcemaps]: http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/
   [enableBehaviors]: https://github.com/drhayes/blaster/blob/43f96688225dc80839acc2e507cc5b8d841d1149/src/behaviors/enableBehaviors.js
   [playermove]: https://github.com/drhayes/blaster/blob/43f96688225dc80839acc2e507cc5b8d841d1149/src/behaviors/playerMove.js

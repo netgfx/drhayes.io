@@ -20,9 +20,11 @@ Steps:
 
   1. [Introduction][intro]
   2. [Part One: The Player][part1]
+  3. [Part Two: Shooting and Explosions][part2]
 
   [playblaster]: http://blaster.drhayes.io
   [repo]: https://github.com/drhayes/blaster
   [subscribe]: http://eepurl.com/bBji6j
   [intro]: /blaster/intro.html
   [part1]: /blaster/part1.html
+  [part2]: /blaster/part2.html
