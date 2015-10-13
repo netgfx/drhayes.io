@@ -10,7 +10,8 @@ var fs = require('fs');
 
 var breadcrumbs = require('./lib/breadcrumbs');
 var markdown = require('./lib/markdown');
-var generateDescription = require('./lib/generateDescription');
+var findFirstSentence = require('./lib/findFirstSentence');
+var titleAndDescription = require('./lib/titleAndDescription');
 
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.html', 'utf8'));
 Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.html', 'utf8'));
@@ -42,8 +43,9 @@ metalsmith
     }
   }))
   .use(breadcrumbs())
-  .use(generateDescription)
+  .use(findFirstSentence)
   .use(markdown)
+  .use(titleAndDescription)
   .use(layouts({
     engine: 'handlebars',
     directory: 'templates',
