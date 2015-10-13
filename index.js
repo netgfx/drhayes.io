@@ -12,6 +12,7 @@ var breadcrumbs = require('./lib/breadcrumbs');
 var markdown = require('./lib/markdown');
 var findFirstSentence = require('./lib/findFirstSentence');
 var titleAndDescription = require('./lib/titleAndDescription');
+var findCategory = require('./lib/findCategory');
 
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.html', 'utf8'));
 Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.html', 'utf8'));
@@ -44,6 +45,7 @@ metalsmith
   }))
   .use(breadcrumbs())
   .use(findFirstSentence)
+  .use(findCategory)
   .use(markdown)
   .use(titleAndDescription)
   .use(layouts({
