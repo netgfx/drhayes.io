@@ -1,5 +1,6 @@
 ---
 title: ImpactJS Stuff
+pageTitle: ImpactJS Stuff
 date: 2015-02-09 16:37
 ---
 
