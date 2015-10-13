@@ -10,6 +10,7 @@ var fs = require('fs');
 
 var breadcrumbs = require('./lib/breadcrumbs');
 var markdown = require('./lib/markdown');
+var generateDescription = require('./lib/generateDescription');
 
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.html', 'utf8'));
 Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.html', 'utf8'));
@@ -35,6 +36,7 @@ Metalsmith(__dirname)
     }
   }))
   .use(breadcrumbs())
+  .use(generateDescription)
   .use(markdown)
   .use(layouts({
     engine: 'handlebars',
@@ -51,16 +53,6 @@ Metalsmith(__dirname)
       ]
     }
   }))
-  // .use(permalinks({
-  //   pattern: ':collection/:title'
-  // }))
-  // .use(function(files, metalsmith, done) {
-  //   for (var filename in files) {
-  //     if (filename.match())
-  //     console.log(filename);
-  //   }
-  //   done();
-  // })
   .destination('./build')
   .build(function(err, files) {
     if (err) {
