@@ -1,5 +1,6 @@
 ---
 title: About
+pageTitle: About
 date: 2015-10-01 22:06:00
 ---
 
