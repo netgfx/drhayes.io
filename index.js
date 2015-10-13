@@ -18,13 +18,19 @@ Handlebars.registerHelper('dateFormat', function (dateStr) {
   return moment(dateStr).format('MMMM D, YYYY');
 });
 
-Metalsmith(__dirname)
-  .use(watch({
-    paths: {
-      "${source}/**/*": true,
-      "templates/**/*": "**/*.md"
-    }
-  }))
+var metalsmith = Metalsmith(__dirname);
+
+if (process.env.WATCH === 'true') {
+  metalsmith = metalsmith
+    .use(watch({
+      paths: {
+        "${source}/**/*": true,
+        "templates/**/*": "**/*.md"
+      }
+    }));
+}
+
+metalsmith
   .use(collections({
     pages: {
       pattern: 'content/pages/*.md'
