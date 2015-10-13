@@ -1,5 +1,6 @@
 ---
 title: Overview
+description: Blaster is the name of a twin-stick shooter I wrote.
 date: 2015-09-27 8:20:00
 ---
 
