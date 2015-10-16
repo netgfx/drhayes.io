@@ -22,6 +22,7 @@ Steps:
   1. [Introduction][intro]
   2. [Part One: The Player][part1]
   3. [Part Two: Shooting and Explosions][part2]
+  4. [Part Three: Enemies and AI][part3]
 
   [playblaster]: http://blaster.drhayes.io
   [repo]: https://github.com/drhayes/blaster
@@ -29,3 +30,4 @@ Steps:
   [intro]: /blaster/intro.html
   [part1]: /blaster/part1.html
   [part2]: /blaster/part2.html
+  [part3]: /blaster/part3.html
