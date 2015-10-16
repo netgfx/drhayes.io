@@ -129,7 +129,7 @@ Again, crucially, I'm multiplying the `rotationFactor` by `game.time.physicsElap
 
 Check out [OrbitPlayer#update][orbitupdate]. When I first started working on it I wanted the Enforcers to, literally, orbit the player in an ellipse and adjust for player movements. I spent a bit of time trying to get that right before realizing that accelerating towards the player's position would be good enough since the acceleration would swing the Enforcer around in a vaguely elliptical path anyway. No tricks here, just good ol' physics.
 
-And now we've arrived at [ShootPlayer#update][shootplayerupdate]. There's some subtlty here so I'll break this one down line-by-line.
+And now we've arrived at [ShootPlayer#update][shootplayerupdate]. There's some subtlety here so I'll break this one down line-by-line.
 
 ```js
 if (!entity.alive) {
@@ -144,6 +144,28 @@ if (!player || !player.alive) {
 ```
 
 I love timers. I love timers so much. The Enforcer shoots on a timer. The Enforcer does not shoot if there's nothing to shoot because the player is dead.
+
+```js
+if (this.shootTimer <= 0) {
+  this.shootTimer = SHOOT_TIMER_MS;
+  // First shot.
+  this.angleForShoot.set(player.x - entity.x, player.y - entity.y);
+  Phaser.Point.normalize(this.angleForShoot, this.angleForShoot);
+  entity.game.shooting.enforcerShoot(entity.x, entity.y, this.angleForShoot.x, this.angleForShoot.y);
+  // Second shot.
+  entity.game.time.events.add(SECOND_SHOT_DELAY, () => {
+    this.angleForShoot.set(player.x - entity.x + player.body.velocity.x, player.y - entity.y + player.body.velocity.y);
+    Phaser.Point.normalize(this.angleForShoot, this.angleForShoot);
+    entity.game.shooting.enforcerShoot(entity.x, entity.y, this.angleForShoot.x, this.angleForShoot.y);
+  });
+}
+```
+
+The Enforcer takes two shots: one at the player's current position, and another a little bit later at where the player is going to be based on their current velocity.
+
+Honestly, I lucked out here: the second shot's delay and velocity, combined with the player's maximum velocity, means the Enforcer's score direct hits with the second bullet *all the time* if the player travels in straight lines and doesn't dodge. Combining a lot of Enforcers together makes things pretty deadly.
+
+Note that I'm not using `Phaser.Point.normalize` correctly here: I should be calling `this.angleForShoot`'s method instead of the static version. Oops. ¯\\\_(ツ)\_/¯
 
 ### Spawn
 
@@ -172,12 +194,19 @@ startSpawn() {
 }
 ```
 
+The player doesn't just **start** in the center of the screen. The player slowly fades in with a little twirl thanks to a tween. That gives the player a chance to prepare before being hit with a bunch of enemies.
 
 ## Let's Review
 
 ### Now
 
+Enemies that go after the player and *really* kill it! Shooting and spawning!
+
+At this point I was sitting people down in front of the game and watching them die a lot. Too much, in fact. I'd wanted the game to be hard (it *was* inspired by Robotron: 2084 after all), but it was brutal and not fun. I didn't need it to be super fun, but it was heading towards super UN-fun. Not good.
+
 ### Next
+
+Assassins! Lives! Score! All the things a little game needs to be a grown-up. Stay tuned.
 
   [playblaster]: http://blaster.drhayes.io
   [sha3]: https://github.com/drhayes/blaster/commit/0d11712c2a771d19c538eba79518b1738d179941
