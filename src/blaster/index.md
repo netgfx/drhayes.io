@@ -4,6 +4,8 @@ description: Blaster is the name of a twin-stick shooter I wrote.
 date: 2015-09-27 8:20:00
 ---
 
+![Screenshot of Blaster](screenshot.png)
+
 [Play the game here][playblaster].
 
 Blaster is the name of the twin-stick shooter I wrote as a break from building the _Big Game_ (which needs a better name!). Since that game is going to take me a very long time to build I figured I should take a break and build something simple and fun that wouldn't take me very long to complete, relatively speaking.
