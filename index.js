@@ -1,18 +1,18 @@
-var Metalsmith = require('metalsmith');
-var watch = require('metalsmith-watch');
-var collections = require('metalsmith-collections');
-var permalinks = require('metalsmith-permalinks');
-var layouts = require('metalsmith-layouts');
-var Handlebars = require('handlebars');
-var less = require('metalsmith-less');
-var moment = require('moment');
-var fs = require('fs');
+const Metalsmith = require('metalsmith');
+const watch = require('metalsmith-watch');
+const collections = require('metalsmith-collections');
+const permalinks = require('metalsmith-permalinks');
+const layouts = require('metalsmith-layouts');
+const Handlebars = require('handlebars');
+const less = require('metalsmith-less');
+const moment = require('moment');
+const fs = require('fs');
 
-var breadcrumbs = require('./lib/breadcrumbs');
-var markdown = require('./lib/markdown');
-var findFirstSentence = require('./lib/findFirstSentence');
-var titleAndDescription = require('./lib/titleAndDescription');
-var findCategory = require('./lib/findCategory');
+const breadcrumbs = require('./lib/breadcrumbs');
+const markdown = require('./lib/markdown');
+const findFirstSentence = require('./lib/findFirstSentence');
+const titleAndDescription = require('./lib/titleAndDescription');
+const findCategory = require('./lib/findCategory');
 
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.html', 'utf8'));
 Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.html', 'utf8'));
@@ -20,7 +20,7 @@ Handlebars.registerHelper('dateFormat', function (dateStr) {
   return moment(dateStr).format('MMMM D, YYYY');
 });
 
-var metalsmith = Metalsmith(__dirname);
+let metalsmith = Metalsmith(__dirname);
 
 if (process.env.WATCH === 'true') {
   metalsmith = metalsmith

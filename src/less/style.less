@@ -24,11 +24,11 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', Georgia, serif;
 }
 
-@linkColor: steelblue;
+$linkColor: steelblue;
 
 a {
   position: relative;
-  color: @linkColor;
+  color: $linkColor;
   text-decoration: none;
   -webkit-transition: text-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
   transition: text-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
@@ -42,7 +42,7 @@ a {
     width: 0;
     height: 100%;
     margin: auto;
-    background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff), linear-gradient(@linkColor, @linkColor);
+    background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff), linear-gradient($linkColor, $linkColor);
     background-size: 0.10rem 0.01rem, 0.10rem 0.07rem, 0.07rem 0.07rem;
     background-repeat: no-repeat, no-repeat, repeat-x;
     background-position: 0% 100%, 100% 100%, 0% 100%;
@@ -70,7 +70,7 @@ code, code[class*="language-"], pre[class*="language-"] {
 }
 
 .center-container {
-  max-width: @width;
+  max-width: $width;
   margin: 0 auto;
 }
 
