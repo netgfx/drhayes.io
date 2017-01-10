@@ -4,7 +4,7 @@ const collections = require('metalsmith-collections');
 const permalinks = require('metalsmith-permalinks');
 const layouts = require('metalsmith-layouts');
 const Handlebars = require('handlebars');
-const less = require('metalsmith-less');
+const sass = require('metalsmith-sass');
 const moment = require('moment');
 const fs = require('fs');
 
@@ -16,9 +16,7 @@ const findCategory = require('./lib/findCategory');
 
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.html', 'utf8'));
 Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.html', 'utf8'));
-Handlebars.registerHelper('dateFormat', function (dateStr) {
-  return moment(dateStr).format('MMMM D, YYYY');
-});
+Handlebars.registerHelper('dateFormat', dateStr => moment(dateStr).format('MMMM D, YYYY'));
 
 let metalsmith = Metalsmith(__dirname);
 
@@ -55,17 +53,11 @@ metalsmith
     default: 'page.html',
     pattern: '**/*.html'
   }))
-  .use(less({
-    pattern: 'less/style.less',
-    render: {
-      paths: [
-        'src/less/'
-      ]
-    }
+  .use(sass({
+    outputStyle: 'expanded',
+    outputDir: 'css/'
   }))
   .destination('./build')
-  .build(function(err, files) {
-    if (err) {
-      throw err;
-    }
+  .build(err => {
+    if (err) throw err;
   });
