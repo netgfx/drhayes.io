@@ -1,8 +1,9 @@
 ---
 title: Map Entity Loader
-pageTitle: Map Entity Loader
 date: 2016-10-03 14:28
 ---
+
+This post describes a neat system for generating unique IDs in Tiled JSON maps using a custom webpack loader. Whew, that's a mouthful.
 
 [Here's the code for the loader in its current form.][gist]
 
